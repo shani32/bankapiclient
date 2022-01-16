@@ -7,7 +7,7 @@ function App() {
  
 
   const getData = async () => {
-    const { data: users } = await axios.get('http://localhost:8080/api/users')
+    const { data: users } = await axios.get('https://shanifirst.herokuapp.com/api/users/api/users')
     setUsers(users)
 
   }
