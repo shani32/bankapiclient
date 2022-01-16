@@ -7,9 +7,8 @@ function App() {
  
 
   const getData = async () => {
-    const { data: users } = await axios.get('https://shanifirst.herokuapp.com/api/users')
-    setUsers(users)
-
+    const { data } = await axios.get('https://shanifirst.herokuapp.com/api/users')
+    setUsers(data);
   }
   useEffect(() => {
     getData()
@@ -20,7 +19,7 @@ function App() {
     <div className="App">
       hello you all
       {users.map((user) => (
-        <Card key={user.id} />
+        <Card key={user.id} user={user} />
       ))}
     </div>
   );
